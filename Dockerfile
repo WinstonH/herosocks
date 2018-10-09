@@ -6,13 +6,13 @@ ENV SS_GIT_PATH="https://github.com/shadowsocks/shadowsocks-libev" \
 
 #Download applications
 RUN apk --update add --no-cache nginx \
-                                   ca-certificates \
-                                   libcrypto1.0 \
-                                   libev \
-                                   libsodium \
-                                   mbedtls \
-                                   pcre \
-                                   c-ares \
+                                ca-certificates \
+                                libcrypto1.0 \
+                                libev \
+                                libsodium \
+                                mbedtls \
+                                pcre \
+                                c-ares \
     && apk add --no-cache --virtual TMP git \
                                         autoconf \
                                         automake \
