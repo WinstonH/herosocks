@@ -1,0 +1,14 @@
+{
+  "name": "Build your own ss",
+  "description": "Deploy Shadowsocks to Heroku.",
+  "keywords": ["Shadowsocks"],
+  "env": {
+    "PASSWORD": {
+      "description": "The default password is below, please set your own",
+      "value": "herosocks"
+     }
+  },
+  "website": "https://github.com/WinstonH/herosocks",
+  "repository": "https://github.com/WinstonH/herosocks",
+  "stack": "container"
+}
