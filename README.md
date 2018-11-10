@@ -16,4 +16,4 @@ This trick heavily rely on the domain of herokuapp.com. \
 Please do not distribute this repo everywhere in case the domain is blocked.
 ## Demo
 Feel free to use but make sure you obey the Note part mentioned above.
-    ![](github.com/WinstonH/herosocks/blob/master/img/demo.jpg)
+    ![](github.com/WinstonH/herosocks/blob/master/img/demo.png)
