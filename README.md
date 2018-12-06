@@ -9,10 +9,10 @@ Theoretically, this enables ss-server to use any CDN that support websocket traf
 ## How to use
 Host: <app_name>.herokuapp.com \
 Port: 80 \
-Plug-in: simple-obfs \
+Plug-in: simple-obfs or ss-local.exe \
 Plug-in-options: obfs=http;obfs-host=<app_name>.herokuapp.com
 ## Note
-This trick heavily rely on the domain of herokuapp.com. \
+This trick heavily relies on the domain of herokuapp.com. \
 Please do not distribute this repo everywhere in case the domain is blocked.
 ## Demo
 Feel free to use but make sure you obey the Note part mentioned above. \
