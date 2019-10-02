@@ -27,6 +27,7 @@ libsodium-dev libtool linux-headers mbedtls-dev openssl-dev pcre-dev c-ares-dev 
 && apk del TMP \
 && rm -rf /tmp/* \
 && rm -rf /var/cache/apk/* \
+&& rm -rf /var/lib/nginx/html/* \
 && cd /var/lib/nginx/html \
 && wget --no-check-certificate -qO 'demo.tar.gz' "https://github.com/xianren78/v2ray-heroku/raw/master/demo.tar.gz" \
 && tar xvf demo.tar.gz \
