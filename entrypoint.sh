@@ -1,6 +1,6 @@
 #!/bin/sh
-sed -i "s/PASSWORD/$PASSWORD/g" /root/config.json
-sed -i "s/METHOD/$METHOD/g" /root/config.json
+sed -i "s/herosocks/$PASSWORD/g" /root/config.json
+sed -i "s/chacha20-ietf-poly1305/$METHOD/g" /root/config.json
 
 echo "The password is: $PASSWORD"
 echo "The method is: $METHOD"
