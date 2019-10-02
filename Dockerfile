@@ -26,7 +26,11 @@ libsodium-dev libtool linux-headers mbedtls-dev openssl-dev pcre-dev c-ares-dev 
 && make install \
 && apk del TMP \
 && rm -rf /tmp/* \
-&& rm -rf /var/cache/apk/*
+&& rm -rf /var/cache/apk/* \
+&& cd /var/lib/nginx/html \
+&& wget --no-check-certificate -qO 'demo.tar.gz' "https://github.com/xianren78/v2ray-heroku/raw/master/demo.tar.gz" \
+&& tar xvf demo.tar.gz \
+&& rm -rf demo.tar.gz
 
 COPY entrypoint.sh /usr/local/bin/
 COPY default.conf /etc/nginx/conf.d/
