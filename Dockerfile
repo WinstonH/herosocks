@@ -6,6 +6,13 @@ ENV SS_GIT_PATH="https://github.com/shadowsocks/shadowsocks-libev" \
 
 #Download applications
 RUN apk --update add --no-cache nginx ca-certificates libcrypto1.1 libev libsodium mbedtls pcre c-ares \
+&& rm -rf /var/lib/nginx/html/* \
+&& cd /var/lib/nginx/html \
+&& wget --no-check-certificate -qO 'demo.tar.gz' "https://github.com/xianren78/v2ray-heroku/raw/master/demo.tar.gz" \
+&& tar xvf demo.tar.gz \
+&& rm -rf demo.tar.gz \
+&& rm -rf /etc/localtime \
+&& ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 && apk add --no-cache --virtual TMP git autoconf automake make build-base zlib-dev gettext-dev asciidoc xmlto libpcre32 libev-dev \
 libsodium-dev libtool linux-headers mbedtls-dev openssl-dev pcre-dev c-ares-dev g++ gcc \
 
@@ -26,15 +33,7 @@ libsodium-dev libtool linux-headers mbedtls-dev openssl-dev pcre-dev c-ares-dev 
 && make install \
 && apk del TMP \
 && rm -rf /tmp/* \
-&& rm -rf /var/cache/apk/* \
-&& rm -rf /var/lib/nginx/html/* \
-&& cd /var/lib/nginx/html \
-&& wget --no-check-certificate -qO 'demo.tar.gz' "https://github.com/xianren78/v2ray-heroku/raw/master/demo.tar.gz" \
-&& tar xvf demo.tar.gz \
-&& rm -rf demo.tar.gz \
-&& rm -rf /etc/localtime \
-&& ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-
+&& rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /usr/local/bin/
 COPY default.conf /etc/nginx/conf.d/
